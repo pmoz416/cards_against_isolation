@@ -1,0 +1,141 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+Rails:
+  Enabled: true
+
+AllCops:
+  TargetRubyVersion: 2.6.6
+  Exclude:
+    - Guardfile
+    - Rakefile
+    - bin/**/*
+    - db/schema.rb
+    - node_modules/**/*
+  NewCops: enable
+
+Layout/DotPosition:
+  EnforcedStyle: trailing
+
+Layout/EndAlignment:
+  AutoCorrect: true
+  EnforcedStyleAlignWith: variable
+
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/LineLength:
+  Exclude:
+    - db/migrate/**/*
+    - Gemfile
+  IgnoredPatterns:
+    - \#\s
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+Layout/ParameterAlignment:
+  EnforcedStyle: with_fixed_indentation
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - spec/**/*
+
+Lint/SuppressedException:
+  Enabled: false
+
+Metrics/AbcSize:
+  Exclude:
+    - db/migrate/**/*
+
+Metrics/BlockLength:
+  Exclude:
+    - config/**/*
+    - lib/tasks/**/*
+    - spec/**/*
+
+Metrics/MethodLength:
+  Exclude:
+    - db/migrate/**/*
+
+Rails/DynamicFindBy:
+  Enabled: false
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
+Rails/HasAndBelongsToMany:
+  Enabled: false
+
+Rails/OutputSafety:
+  Enabled: false
+
+Rails/RakeEnvironment:
+  Exclude:
+    - lib/tasks/auto_annotate_models.rake
+
+Rails/SkipsModelValidations:
+  Enabled: false
+
+Rails/UnknownEnv:
+  Environments:
+    - development
+    - production
+    - staging
+    - test
+
+RSpec/BeforeAfterAll:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Max: 10
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Max: 4
+
+Security/Eval:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/LambdaCall:
+  Enabled: false
+
+Style/NegatedIf:
+  Enabled: false
+
+Style/RedundantCapitalW:
+  Enabled: false
+
+Style/Send:
+  Enabled: true
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: double_quotes
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
