@@ -48,6 +48,7 @@ end
 
 group :test do
   gem "cuprite", "~> 0.11.0"
+  gem "launchy", "~> 2.5.0"
   gem "site_prism", "~> 3.6.0"
 end
 
