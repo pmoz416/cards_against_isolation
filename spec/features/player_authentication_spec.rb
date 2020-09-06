@@ -31,8 +31,7 @@ describe "Player authentication", type: :feature do
         signin_page.password_field.set("Passw0rd")
         signin_page.login_button.click
 
-        expect(page).to have_current_path("/")
-        expect(page).to have_content("Dashboard")
+        expect(signin_page).to be_displayed
       end
     end
 
@@ -52,35 +51,35 @@ describe "Player authentication", type: :feature do
         )
       end
     end
-  end
 
-  context "when they enter an incorrect email address" do
-    it "shows an error message" do
-      confirmed_player
+    context "when they enter an incorrect email address" do
+      it "shows an error message" do
+        confirmed_player
 
-      signin_page = Pages::Players::SignIn.new
-      signin_page.load
+        signin_page = Pages::Players::SignIn.new
+        signin_page.load
 
-      signin_page.email_field.set("invalid@example.com")
-      signin_page.password_field.set("Passw0rd")
-      signin_page.login_button.click
+        signin_page.email_field.set("invalid@example.com")
+        signin_page.password_field.set("Passw0rd")
+        signin_page.login_button.click
 
-      expect(signin_page.alert).to have_content("Invalid Email or password.")
+        expect(signin_page.alert).to have_content("Invalid Email or password.")
+      end
     end
-  end
 
-  context "when they enter an incorrect password" do
-    it "shows an error message" do
-      confirmed_player
+    context "when they enter an incorrect password" do
+      it "shows an error message" do
+        confirmed_player
 
-      signin_page = Pages::Players::SignIn.new
-      signin_page.load
+        signin_page = Pages::Players::SignIn.new
+        signin_page.load
 
-      signin_page.email_field.set("player@example.com")
-      signin_page.password_field.set("invalid")
-      signin_page.login_button.click
+        signin_page.email_field.set("player@example.com")
+        signin_page.password_field.set("invalid")
+        signin_page.login_button.click
 
-      expect(signin_page.alert).to have_content("Invalid Email or password.")
+        expect(signin_page.alert).to have_content("Invalid Email or password.")
+      end
     end
   end
 end
