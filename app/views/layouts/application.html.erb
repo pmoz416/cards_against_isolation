@@ -10,13 +10,22 @@
   </head>
 
   <body>
-    <% if notice %>
-      <p class="notice"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert"><%= alert %></p>
-    <% end %>
+    <header class="px-6 py-4 shadow">
+      <%=
+        link_to "Cards Against Isolation",
+                root_path,
+                class: "font-bold text-xl"
+      %>
+    </header>
+    <main class="p-6">
+      <% if notice %>
+        <p class="notice"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert"><%= alert %></p>
+      <% end %>
 
-    <%= yield %>
+      <%= yield %>
+    </main>
   </body>
 </html>
