@@ -31,7 +31,8 @@ describe "Player authentication", type: :feature do
         signin_page.password_field.set("Passw0rd")
         signin_page.login_button.click
 
-        expect(signin_page).to be_displayed
+        expect(page).to have_current_path("/")
+        expect(page).to have_content("Dashboard")
       end
     end
 
