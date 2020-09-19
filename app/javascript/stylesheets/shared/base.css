@@ -1,0 +1,52 @@
+h1 {
+  @apply font-bold;
+  @apply text-2xl;
+  @apply mb-4;
+}
+
+h2 {
+  @apply font-bold;
+  @apply text-xl;
+  @apply mt-4;
+  @apply mb-2;
+}
+
+a {
+  @apply underline;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  @apply border;
+  @apply border-black;
+  @apply mb-4;
+}
+
+input[type="submit"] {
+  @apply bg-gray-800;
+  @apply transition;
+  @apply ease-in-out;
+  @apply duration-150;
+
+  @apply border;
+  @apply border-transparent;
+
+  @apply font-medium;
+  @apply text-white;
+
+  @apply my-4;
+  @apply px-4;
+  @apply py-1;
+}
+
+input[type="submit"]:focus {
+  @apply bg-gray-700;
+
+  @apply outline-none;
+  @apply shadow-outline;
+}
+
+input[type="submit"]:hover {
+  @apply bg-gray-700;
+}
