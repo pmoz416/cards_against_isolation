@@ -93,6 +93,8 @@ RSpec/BeforeAfterAll:
   Enabled: false
 
 RSpec/ExampleLength:
+  Exclude:
+    - spec/features/**/*
   Max: 10
 
 RSpec/MultipleExpectations:
